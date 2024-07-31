@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color by Shivhari</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-family: Arial;
+            margin-top: 20px;
+        }
+
+        .banner {
+            background-image: url("./mypic.png");
+            height: 300px;
+            border-radius: 300px;
+            background-size: cover;
+            border: 2px solid black;
+        }
+
+        .shopper {
+            font-family: Brush Script MT;
+            font-size: 80px;
+        }
+    </style>
+
+    <script>
+        function bodyload() {
+            const banner = document.getElementById('banner');
+            const shopper = document.getElementById('shopper');
+            const colorPicker = document.getElementById('colorPicker');
+
+            colorPicker.value = '#00ffff';
+            banner.style.backgroundColor = '#00ffff';
+
+            colorPicker.addEventListener('input', function () {
+                banner.style.backgroundColor = colorPicker.value;
+                shopper.style.color = colorPicker.value;
+            });
+        }
+    </script>
+
+</head>
+
+<body onload="bodyload()">
+    <div>
+        <h2>Change Background Color</h2>
+        <div class="banner" id="banner"></div>
+        <div class="shopper" id="shopper">Shivhari</div>
+        <input type="color" id="colorPicker"><br><br>
+        <b>Try Me</b>
+    </div>
+</body>
+
+</html>
